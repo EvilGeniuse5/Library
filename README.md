@@ -1,45 +1,61 @@
-# Getting Started with Create React App
+# How to setup dev environment
+1. Install npm
+2. Install [VScode](https://code.visualstudio.com/) or [webstorm](https://www.jetbrains.com/webstorm/) 
+3. install [git](https://git-scm.com/downloads) and sign in (Using your editor or GH CLI or Windows Credentials for GIT)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## First time project setup
+1. Request collabaration access https://github.com/EvilGeniuse5/Library
+2. `git clone https://github.com/EvilGeniuse5/Library.git`
+3. Go inside the project folder and open it with your editor/IDE
+4. Open the terminal (VSCode : CTRL + J)
+5. RUN `npm install` or `npm i`
 
-## Available Scripts
+### If you're using VSCode
+1. Install visual studio code extentions - Bootstrap, React-Bootstrap, Sass
+2. Restart visual studio code two times
 
-In the project directory, you can run:
+## Run the project
+- Previewing the site with hot reloading
+  1. RUN `npm run start`
+  2. Open the output url in browser
+  3. The server will apply changes automatically and restart every time you make changes to the code
 
-### `npm start`
+# Rules
+1. Always try to use Bootstrap classes and React-Bootstrap components.
+2. Use best practices as we learned in the 1st week tasks.
+3. Use meaningful commit messages.
+4. Always use the pull request template with detailed changes.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+# Contribute
+1. Make sure your branch is `dev` and sync with the remote branch.
+2. Create a new branch from the `dev` branch before start working on a new issue
+3. Get the `git checkout -branch-name` command from the JIRA kanban board
+4. Publish your branch
+5. When all the commits are ready for publishing, Create a Pull Request to the `dev` branch
+6. Make sure you are pulling 'from' your branch and pulling 'into' `dev` or immediate upstream branch
+7. Make sure to use the PULL request template with title and the description with your changes. (detailed)
+8. Review changes and Merge
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Commit Message Types
+### Commit message template
+`<type>[optional scope]:<description>` <br>
+#### Example <br>
+`style: update navbar hamburger drop down styles`
+  <br>
+1. feat - Features - A new feature
+2. fix - Bug Fixes - A bug Fix
+3. docs - Documentation - Documentation only changes
+4. style - Styles - Changes that do not affect the meaning of the code
+5. refactor - Code Refactoring - A code change that neither fixes a bug nor adds a feature
+6. perf - Performance, Improvements - A code change that improves performance
+7. test - Tests - Addming missing tests or correcting existing tests
+8. build - Builds - Changes that affect the build system or external dependencies 
+9. ci - Continuous Intergrations - Changes to our CI configuration files ans scripts 
+10. chore - Chores Other changes that don't modify src or test files
+11. revert - Reverts Reverts a previous commit
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
