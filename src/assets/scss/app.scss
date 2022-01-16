@@ -1,6 +1,10 @@
 // structure is important!
-@import "pages/home";
+@import "main/config";
+@import "sections/hero";
 
 //import bootstrap
 @import "~bootstrap/scss/bootstrap";
 
+h1 {
+    color: $primary-color;
+}
