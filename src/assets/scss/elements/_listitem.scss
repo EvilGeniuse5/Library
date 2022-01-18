@@ -1,0 +1,36 @@
+.list-item {
+    display: flex;
+    height: 40px;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #263035;
+    justify-content: space-between;
+    align-items: center;
+
+    &__icon {
+        margin: 0 0.5rem;
+        display: none;
+        cursor: pointer;
+    }
+
+    &__settings .trash {
+        color: #A31D1E;
+    }
+
+    &__settings .edit {
+        color: #EB921A;
+    }
+
+    &:hover {
+        background: #f5f5f5;
+
+        .list-item__icon {
+            display: inline-block;
+        }
+    }
+
+    .trash-2 {
+        width: 29px;
+        color: red;
+    }
+}

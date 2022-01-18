@@ -4,15 +4,12 @@ import BookForm from "./BookForm";
 const BookList: React.FC = () => (
   <div>
     <h1>Books</h1>
-    <ul>
+    <ul className="list-group">
       <li>
-        <ListItem author="Brian" />
+        <ListItem id={1} author="Brian" />
       </li>
       <li>
-        <ListItem author="James" />
-      </li>
-      <li>
-        <ListItem author="Alice" />
+        <ListItem id={2} author="James" />
       </li>
     </ul>
     <AddItem />
