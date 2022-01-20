@@ -2,6 +2,7 @@
 @import "main/config";
 @import "sections/hero";
 @import "elements/listitem";
+@import "components/list";
 
 //import bootstrap
 @import "~bootstrap/scss/bootstrap";
@@ -9,10 +10,6 @@
 
 * {
     font-family: 'Raleway', sans-serif;
-}
-
-h1 {
-    color: $primary-color;
 }
 
 ul {

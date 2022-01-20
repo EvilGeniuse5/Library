@@ -1,7 +1,7 @@
 import { Edit, Trash2 } from "react-feather";
 const ListItem: React.FC<{ id: number; author: string }> = ({ id, author }) => {
   return (
-    <div className="list-item py-4">
+    <div className="list-item py-2">
       {id}.&nbsp;
       {author}
       <div className="list-item__settings">
