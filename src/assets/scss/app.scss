@@ -1,8 +1,10 @@
 // structure is important!
 @import "main/config";
 @import "sections/hero";
+@import "sections/navbar";
 @import "elements/listitem";
 @import "components/list";
+
 
 //import bootstrap
 @import "~bootstrap/scss/bootstrap";
