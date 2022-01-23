@@ -17,7 +17,7 @@ const AuthorList: React.FC = () => (
         <ListItem id={3} author="Author 3 name" />
       </li>
     </ul>
-    <AddItem />
+    <AddItem title="Add Author" />
     <AuthorForm />
   </div>
 );

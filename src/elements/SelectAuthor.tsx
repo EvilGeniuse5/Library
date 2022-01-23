@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Select from "react-select";
-const SelectAuthor: React.FC = () => {
+const SelectAuthor: React.FC<{ title: string }> = ({ title }) => {
   const [isClearable, setClearable] = useState(true);
   const toggleClearable = () => {
     isClearable ? setClearable(false) : setClearable(false);
@@ -13,7 +13,7 @@ const SelectAuthor: React.FC = () => {
   return (
     <div className="select-author">
       {" "}
-      <p className="select-author__title">Title of the Book</p>
+      <p className="select-author__title">{title}</p>
       <Select
         options={options}
         isClearable={true}

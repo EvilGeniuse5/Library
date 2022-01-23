@@ -6,7 +6,9 @@
 @import "elements/additem";
 @import "elements/inputbox";
 @import "elements/selectauthor";
+@import "elements/createbutton";
 @import "components/list";
+@import "components/form";
 
 
 //import bootstrap
@@ -17,6 +19,7 @@
     font-family: 'Raleway', sans-serif;
     border-color: $input-border !important;
     border-width: 2px !important;
+    @include transition-ease;
 }
 
 ul {
