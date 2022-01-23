@@ -19,7 +19,7 @@ const BookList: React.FC = () => (
         <ListItem id={4} author="Book 4 title" />
       </li>
     </ul>
-    <AddItem />
+    <AddItem title="Add Book" />
     <BookForm />
   </div>
 );

@@ -1,0 +1,28 @@
+.library-form {
+    margin: 3rem 0 10rem 0;
+
+    &__form {
+        width: 70%;
+    }
+
+    &__title {
+
+        h1 {
+            color: $form-title;
+            font-size: 1.7rem;
+            line-height: 1.8rem;
+            margin: 0;
+        }
+
+        hr {
+            margin: 0;
+            height: 3px !important;
+            border: 0;
+            background: $form-title;
+        }
+    }
+
+    &__xcircle {
+        cursor: pointer;
+    }
+}

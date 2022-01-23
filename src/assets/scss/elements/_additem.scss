@@ -1,12 +1,13 @@
-.add-item{
+.add-item {
     display: flex;
-    width : 125px;
-    align-items:center;
-    font-size: 1rem;
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: 500;
     cursor: pointer;
-    &__plus{
-        margin-right: 0.25rem;
-        color:$plus-icon;
-        transform:scale(1.1);
+
+    &__plus {
+        margin-right: 0.5rem;
+        color: $plus-icon;
+        transform: scale(1.1);
     }
 }
