@@ -4,6 +4,8 @@
 @import "sections/navbar";
 @import "elements/listitem";
 @import "elements/additem";
+@import "elements/inputbox";
+@import "elements/selectauthor";
 @import "components/list";
 
 
@@ -13,6 +15,8 @@
 
 * {
     font-family: 'Raleway', sans-serif;
+    border-color: $input-border !important;
+    border-width: 2px !important;
 }
 
 ul {

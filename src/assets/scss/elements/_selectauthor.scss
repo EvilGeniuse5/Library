@@ -1,0 +1,17 @@
+.select-author {
+    margin-left: 3rem;
+
+    &__title {
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: $text-color;
+        margin-bottom: 0.3rem;
+    }
+
+    &__select {
+        border-radius: 0 !important;
+        // border: 2px solid $input-border !important;
+        margin-bottom: 1rem;
+        width: 65% !important;
+    }
+}
