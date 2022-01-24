@@ -1,0 +1,14 @@
+.list {
+    hr {
+        border-bottom: 2px solid $text-color !important;
+        opacity: 1 !important;
+    }
+
+    .list-group {
+        margin: 2rem 0;
+    }
+
+    .visibility-hidden {
+        display: none;
+    }
+}

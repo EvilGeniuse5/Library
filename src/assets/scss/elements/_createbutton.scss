@@ -1,0 +1,10 @@
+.create-button {
+    & button {
+        outline: none;
+        border: 0 !important;
+        background: $button-color !important;
+        padding: 0.35rem 1.7rem !important;
+        font-size: 1.1rem;
+        align-self: flex-end;
+    }
+}

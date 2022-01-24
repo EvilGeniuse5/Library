@@ -1,0 +1,38 @@
+.list-item {
+    display: flex;
+    // height: 40px;
+    font-size: 1.7rem;
+    font-weight: 500;
+    color: $text-color;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 0.5rem;
+    @include transition-ease;
+
+    &__icon {
+        margin: 0 0.5rem;
+        cursor: pointer;
+        opacity: 0;
+        @include transition-ease;
+    }
+
+    &__settings .trash {
+        color: $trash-icon;
+    }
+
+    &__settings .edit {
+        color: $edit-icon;
+    }
+
+    &:hover {
+        background: $item-hover;
+        @include transition-ease;
+
+        .list-item__icon {
+            @include transition-ease;
+            opacity: 1;
+        }
+    }
+
+    
+}
