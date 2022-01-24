@@ -1,10 +1,5 @@
-import { useState } from "react";
 import Select from "react-select";
 const SelectAuthor: React.FC<{ title: string }> = ({ title }) => {
-  const [isClearable, setClearable] = useState(true);
-  const toggleClearable = () => {
-    isClearable ? setClearable(false) : setClearable(false);
-  };
   const options = [
     { value: "chocolate", label: "Chocolate" },
     { value: "strawberry", label: "Strawberry" },
