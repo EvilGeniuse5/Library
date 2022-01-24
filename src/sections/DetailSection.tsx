@@ -3,8 +3,8 @@ import AuthorList from "../components/AuthorList";
 import BookList from "../components/BookList";
 
 const DetailSection: React.FC = () => (
-  <Container fluid className="detail px-5 ">
-    <Row className="flex-column flex-lg-row justify-content-between gap-5">
+  <Container fluid className="details px-5 ">
+    <Row className="flex-column-reverse flex-lg-row justify-content-between gap-5">
       <Col>
         <BookList />
       </Col>

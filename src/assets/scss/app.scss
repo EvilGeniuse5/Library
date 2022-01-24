@@ -2,6 +2,7 @@
 @import "main/config";
 @import "sections/hero";
 @import "sections/navbar";
+@import "sections/details";
 @import "elements/listitem";
 @import "elements/additem";
 @import "elements/inputbox";
@@ -19,7 +20,7 @@
     font-family: 'Raleway', sans-serif;
     border-color: $input-border !important;
     border-width: 2px !important;
-    @include transition-ease;
+    // @include transition-ease;
 }
 
 ul {
