@@ -26,3 +26,12 @@
 ul {
     list-style: none;
 }
+
+.pixel-perfect {
+    top: 0;
+    left: 0;
+    position: absolute;
+    z-index: 100;
+    width: 100%;
+    opacity: 0.1;
+}

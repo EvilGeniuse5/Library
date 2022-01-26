@@ -1,9 +1,10 @@
 .input-box {
 
+    margin-top: 0.6rem;
     margin-left: 3rem;
 
     &__title {
-        font-size: 0.75rem;
+        font-size: 0.85rem;
         font-weight: 600;
         color: $text-color;
         margin-bottom: 0.3rem;
@@ -12,7 +13,7 @@
     &__input {
         border-radius: 0 !important;
         border: 2px solid $input-border !important;
-        padding: 0.2rem 0.75rem !important;
+        padding: 0.5rem 0.75rem !important;
         margin-bottom: 1rem;
     }
 }

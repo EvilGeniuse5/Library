@@ -1,7 +1,7 @@
 .list-item {
     display: flex;
     // height: 40px;
-    font-size: 1.7rem;
+    font-size: 1.85rem;
     font-weight: 500;
     color: $text-color;
     justify-content: space-between;
@@ -10,7 +10,7 @@
     @include transition-ease;
 
     &__icon {
-        margin: 0 0.5rem;
+        margin: 0 1.1rem;
         cursor: pointer;
         opacity: 0;
         @include transition-ease;
@@ -18,10 +18,12 @@
 
     &__settings .trash {
         color: $trash-icon;
+        transform: scale(1.3);
     }
 
     &__settings .edit {
         color: $edit-icon;
+        transform: scale(1.3);
     }
 
     &:hover {
@@ -34,5 +36,5 @@
         }
     }
 
-    
+
 }

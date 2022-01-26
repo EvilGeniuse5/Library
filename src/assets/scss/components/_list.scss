@@ -1,11 +1,18 @@
 .list {
+
+    margin: 0 0 0 0.7rem;
+
+    h1 {
+        font-size: 3rem;
+    }
+
     hr {
         border-bottom: 2px solid $text-color !important;
         opacity: 1 !important;
     }
 
     .list-group {
-        margin: 2rem 0;
+        margin: 2.5rem 0 2rem 0;
     }
 
     .visibility-hidden {
