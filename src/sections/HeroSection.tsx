@@ -4,7 +4,7 @@ const HeroSection: React.FC = () => {
   return (
     <Container fluid className="hero">
       <Row className="hero__bg"></Row>
-      <Row className="hero__credits px-5">
+      <Row className="hero__credits px-md-5">
         <p className="text-end">
           Photo by{" "}
           <a

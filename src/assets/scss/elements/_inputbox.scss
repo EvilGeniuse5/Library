@@ -17,3 +17,17 @@
         margin-bottom: 1rem;
     }
 }
+
+@include media-md {
+    .input-box {
+        margin-left: 0rem;
+
+        &__title {
+            font-size: 0.7rem;
+        }
+
+        &__input {
+            padding: 0.3rem 0.4rem !important;
+        }
+    }
+}

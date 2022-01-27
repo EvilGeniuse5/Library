@@ -11,3 +11,15 @@
         font-size: 1.2rem;
     }
 }
+
+@include media-md {
+    .hero {
+        &__bg {
+            height: 327px;
+        }
+
+        &__credits p {
+            font-size: 0.65rem;
+        }
+    }
+}
