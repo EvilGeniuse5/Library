@@ -4,7 +4,7 @@ import DetailSection from "./sections/DetailSection";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App pb-5">
       <Navbar />
       <HeroSection />
       <DetailSection />
