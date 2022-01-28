@@ -11,3 +11,15 @@
         transform: scale(1.3);
     }
 }
+
+@include media-md {
+    .add-item {
+        font-size: 1.2rem;
+        font-weight: 600;
+
+        &__plus {
+            margin-right: 0.5rem;
+            transform: scale(1);
+        }
+    }
+}

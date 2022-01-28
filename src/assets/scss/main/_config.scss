@@ -21,3 +21,27 @@ $input-border:#959595;
 @mixin transition-ease {
     transition: all 0.3s ease-in-out;
 }
+
+@mixin media-md {
+    @media screen and (max-width:768px) {
+        @content;
+    }
+}
+
+@mixin media-lg {
+    @media screen and (max-width:992px) {
+        @content;
+    }
+}
+
+@mixin media-xl {
+    @media screen and (max-width:1200px) {
+        @content;
+    }
+}
+
+@mixin media-xxl {
+    @media screen and (max-width:1400px) {
+        @content;
+    }
+}
