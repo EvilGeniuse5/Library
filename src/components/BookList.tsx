@@ -20,19 +20,19 @@ const BookList: React.FC = () => {
   return (
     <div className="list">
       <h1>Books</h1>
-      <hr />
+      <hr className="title-hr" />
       <ul className="list-group">
         <li>
-          <ListItem id={1} author="Book 1 title" />
+          <ListItem id={1} title="Book 1 title" type="book" />
         </li>
         <li>
-          <ListItem id={2} author="Book 2 title" />
+          <ListItem id={2} title="Book 2 title" type="book" />
         </li>
         <li>
-          <ListItem id={3} author="Book 3 title" />
+          <ListItem id={3} title="Book 3 title" type="book" />
         </li>
         <li>
-          <ListItem id={4} author="Book 4 title" />
+          <ListItem id={4} title="Book 4 title" type="book" />
         </li>
       </ul>
       <AddItem title="Add Book" onclick={handleFormVisibility} />

@@ -17,6 +17,9 @@ $button-text:#E5F8FF;
 $input-text:#32373B;
 $input-border:#959595;
 
+$surface:#F5F5F5;
+$danger:#A31D1E;
+
 //MIXINS
 @mixin transition-ease {
     transition: all 0.3s ease-in-out;
