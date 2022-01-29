@@ -20,16 +20,16 @@ const AuthorList: React.FC = () => {
   return (
     <div className="list">
       <h1>Authors</h1>
-      <hr />
+      <hr className="title-hr" />
       <ul className="list-group">
         <li>
-          <ListItem id={1} author="Author 1 name" />
+          <ListItem id={1} title="Author 1 name" type="author" />
         </li>
         <li>
-          <ListItem id={2} author="Author 2 name" />
+          <ListItem id={2} title="Author 2 name" type="author" />
         </li>
         <li>
-          <ListItem id={3} author="Author 3 name" />
+          <ListItem id={3} title="Author 3 name" type="author" />
         </li>
       </ul>
       <AddItem title="Add Author" onclick={handleFormVisibility} />

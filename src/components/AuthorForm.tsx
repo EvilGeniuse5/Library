@@ -19,7 +19,12 @@ const AuthorForm: React.FC<{
           </span>
         </div>
         <InputBox title="Name of Author" />
-        <Create />
+        <Create
+          heading="Create New Author"
+          description="You can update or remove this author at any moment."
+          cancel="Cancel"
+          confirm="Confirm"
+        />
       </div>
     </div>
   );

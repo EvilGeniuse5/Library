@@ -17,6 +17,7 @@
         hr {
             margin: 0;
             height: 3px !important;
+            opacity: 1;
             border: 0;
             background: $form-title;
         }
@@ -25,6 +26,14 @@
     &__xcircle {
         cursor: pointer;
         transform: scale(1.3);
+        @include transition-ease;
+        border-radius: 50%;
+
+        &:hover {
+            color: $surface !important;
+            background: $danger !important;
+            @include transition-ease;
+        }
     }
 }
 
