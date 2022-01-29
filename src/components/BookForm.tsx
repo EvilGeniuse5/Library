@@ -19,15 +19,15 @@ const BookForm: React.FC<{
             <XCircle className="library-form__xcircle" />
           </span>
         </div>
-        <InputBox title="Title of the Book" />
-        <InputBox title="ISBN" />
+        <InputBox title="Title of the Book" onchange={() => {}} />
+        <InputBox title="ISBN" onchange={() => {}} />
         <SelectAuthor title="Author" />
-        <Create
+        {/* <Create
           heading="Create New Book"
           description="You can update or remove this book at any moment."
           cancel="Cancel"
           confirm="Confirm"
-        />
+        /> */}
       </div>
     </div>
   );

@@ -2,6 +2,12 @@
 
     margin: 0 0 0 0.7rem;
 
+    .list-empty {
+        font-size: 1.5rem;
+        margin: 1.5rem auto -3rem 0;
+        color: $text-secondary;
+    }
+
     h1 {
         font-size: 3rem;
     }
