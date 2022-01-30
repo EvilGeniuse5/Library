@@ -1,16 +1,27 @@
 import React from "react";
 import { Button, Modal } from "react-bootstrap";
-import { useState } from "react";
+import { AlertCircle, CheckCircle } from "react-feather";
 
 const CreateButton: React.FC<{
   heading: string;
   description: string;
   cancel: string;
   confirm: string;
-}> = ({ heading, description, cancel, confirm }) => {
-  const [show, setShow] = useState(false);
+  validation: boolean;
+  onclick: () => void;
+}> = ({ heading, description, cancel, confirm, onclick, validation }) => {
+  const [show, setShow] = React.useState<boolean>(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  const handleItem = () => {
+    if (validation) {
+      onclick();
+      setShow(false);
+    } else {
+      setShow(false);
+    }
+  };
+
   return (
     <div className="create-button d-flex justify-content-end">
       {" "}
@@ -19,15 +30,28 @@ const CreateButton: React.FC<{
       </Button>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>{heading}</Modal.Title>
+          <Modal.Title className="d-flex gap-2 align-items-center">
+            {!validation ? (
+              <AlertCircle className="text-warning" />
+            ) : (
+              <CheckCircle className="text-success" />
+            )}
+            {" " + heading}
+          </Modal.Title>
         </Modal.Header>
         <Modal.Body>{description}</Modal.Body>
         <Modal.Footer>
-          <Button variant="danger" onClick={handleClose}>
-            {cancel}
-          </Button>
-          <Button variant="success" onClick={handleClose}>
-            {confirm}
+          {validation ? (
+            <Button variant="danger" onClick={handleClose}>
+              {" "}
+              {cancel}{" "}
+            </Button>
+          ) : null}
+          <Button
+            variant={validation ? "success" : "danger"}
+            onClick={handleItem}
+          >
+            {validation ? confirm : "Back"}
           </Button>
         </Modal.Footer>
       </Modal>

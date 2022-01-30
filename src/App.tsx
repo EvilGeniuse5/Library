@@ -8,6 +8,7 @@ function App() {
       <Navbar />
       <HeroSection />
       <DetailSection />
+      {/* <img src="/img/empty.jpg" alt="img" className="pixel-perfect" /> */}
     </div>
   );
 }

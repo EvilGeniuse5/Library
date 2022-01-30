@@ -1,15 +1,22 @@
 import { Edit, Trash2 } from "react-feather";
 import { Button, Modal } from "react-bootstrap";
-import { useState } from "react";
+import React from "react";
 
 const ListItem: React.FC<{
   id: number;
   title: string;
   type: string;
-}> = ({ id, title, type }) => {
-  const [show, setShow] = useState(false);
+  onclick: () => void;
+}> = ({ id, title, type, onclick }) => {
+  const [show, setShow] = React.useState<boolean>(false);
+  const handleDelete = () => {
+    onclick();
+    setShow(false);
+  };
+
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
   var heading;
   var description;
   var cancel;
@@ -29,7 +36,7 @@ const ListItem: React.FC<{
 
   return (
     <div className="list-item py-2">
-      {id}.&nbsp;
+      {id + 1}.&nbsp;
       {title}
       <div className="list-item__settings">
         <Edit className="list-item__icon edit" />
@@ -44,7 +51,7 @@ const ListItem: React.FC<{
           <Button variant="success" onClick={handleClose}>
             {cancel}
           </Button>
-          <Button variant="danger" onClick={handleClose}>
+          <Button variant="danger" onClick={handleDelete}>
             {confirm}
           </Button>
         </Modal.Footer>

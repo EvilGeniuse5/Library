@@ -1,10 +1,26 @@
 import AddItem from "../elements/AddItem";
 import AuthorForm from "./AuthorForm";
 import ListItem from "../elements/ListItem";
-import { useState } from "react";
+import React from "react";
 
 const AuthorList: React.FC = () => {
-  const [visibility, setVisibility] = useState(false);
+  const [visibility, setVisibility] = React.useState<boolean>(false);
+  const [authors, setAuthors] = React.useState<Array<string>>([]);
+
+  const removeAuthor = (index: number) => {
+    const newAuthors = [...authors];
+    newAuthors.splice(index, 1);
+    setAuthors(newAuthors);
+  };
+
+  const createAuthor = (author: string) => {
+    if (author === "") {
+      alert("Please enter an author name");
+      return;
+    }
+    const newAuthors = [...authors, author];
+    setAuthors(newAuthors);
+  };
 
   const handleFormVisibility = () => {
     setVisibility(true);
@@ -17,23 +33,36 @@ const AuthorList: React.FC = () => {
   var className: string = visibility
     ? "author-form"
     : "author-form visibility-hidden";
+
   return (
     <div className="list">
       <h1>Authors</h1>
       <hr className="title-hr" />
+
+      {authors.length === 0 ? (
+        <p className="list-empty">
+          <i>No authors listed here.</i>
+        </p>
+      ) : null}
       <ul className="list-group">
-        <li>
-          <ListItem id={1} title="Author 1 name" type="author" />
-        </li>
-        <li>
-          <ListItem id={2} title="Author 2 name" type="author" />
-        </li>
-        <li>
-          <ListItem id={3} title="Author 3 name" type="author" />
-        </li>
+        {authors.map((author: string, index: number) => (
+          <li key={index}>
+            {" "}
+            <ListItem
+              id={index}
+              title={author}
+              onclick={() => removeAuthor(index)}
+              type="author"
+            />
+          </li>
+        ))}
       </ul>
       <AddItem title="Add Author" onclick={handleFormVisibility} />
-      <AuthorForm className={className} onclick={handleOnClose} />
+      <AuthorForm
+        className={className}
+        onclick={handleOnClose}
+        createAuthor={(author: string) => createAuthor(author)}
+      />
     </div>
   );
 };
