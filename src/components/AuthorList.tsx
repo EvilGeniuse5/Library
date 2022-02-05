@@ -3,25 +3,13 @@ import AuthorForm from "./AuthorForm";
 import ListItem from "../elements/ListItem";
 import React from "react";
 
-const AuthorList: React.FC = () => {
+const AuthorList: React.FC<{
+  authorList: any;
+  createAuthor: (author: string)=>void;
+  removeAuthor: (index: number)=>void;
+}> = ({authorList, createAuthor, removeAuthor}) => {
   const [visibility, setVisibility] = React.useState<boolean>(false);
-  const [authors, setAuthors] = React.useState<Array<string>>([]);
-
-  const removeAuthor = (index: number) => {
-    const newAuthors = [...authors];
-    newAuthors.splice(index, 1);
-    setAuthors(newAuthors);
-  };
-
-  const createAuthor = (author: string) => {
-    if (author === "") {
-      alert("Please enter an author name");
-      return;
-    }
-    const newAuthors = [...authors, author];
-    setAuthors(newAuthors);
-  };
-
+  
   const handleFormVisibility = () => {
     setVisibility(true);
   };
@@ -39,13 +27,13 @@ const AuthorList: React.FC = () => {
       <h1>Authors</h1>
       <hr className="title-hr" />
 
-      {authors.length === 0 ? (
+      {authorList.length === 0 ? (
         <p className="list-empty">
           <i>No authors listed here.</i>
         </p>
       ) : null}
       <ul className="list-group">
-        {authors.map((author: string, index: number) => (
+        {authorList.map((author: string, index: number) => (
           <li key={index}>
             {" "}
             <ListItem
