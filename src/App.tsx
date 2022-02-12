@@ -1,8 +1,9 @@
+import React from 'react';
 import HeroSection from './sections/HeroSection';
 import DetailSection from './sections/DetailSection';
 import WelcomeTitle from './sections/WelcomeTitle';
 
-function App() {
+const App: React.FC = () => {
 	return (
 		<div className='App pb-5'>
 			<WelcomeTitle />
@@ -11,6 +12,6 @@ function App() {
 			{/* <img src="/img/empty.jpg" alt="img" className="pixel-perfect" /> */}
 		</div>
 	);
-}
+};
 
 export default App;
