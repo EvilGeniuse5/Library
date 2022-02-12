@@ -1,25 +1,49 @@
 .hero {
     &__bg {
-        height: 653px;
-        background: url("../../img/hero.jpg");
+        height: 250px;
+        background: url("../../img/hero.webp");
         background-size: cover;
         background-position: center;
     }
 
     &__credits p {
-        margin-top: 0.1rem;
-        font-size: 1.2rem;
+        font-size: 0.75rem;
     }
 }
 
-@include media-md {
+
+@include media-breakpoint-up(md) {
     .hero {
         &__bg {
             height: 327px;
         }
 
         &__credits p {
-            font-size: 0.65rem;
+            font-size: 0.90rem;
+        }
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    .hero {
+        &__bg {
+            height: 450px;
+        }
+
+        &__credits p {
+            font-size: 1.05rem;
+        }
+    }
+}
+
+@include media-breakpoint-up(xl) {
+    .hero {
+        &__bg {
+            height: 653px;
+        }
+
+        &__credits p {
+            font-size: 1.2rem;
         }
     }
 }
