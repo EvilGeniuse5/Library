@@ -22,12 +22,12 @@ const ListItem: React.FC<{
 	var cancel;
 	var confirm;
 
-	if (type == 'book') {
+	if (type === 'book') {
 		heading = 'Delete Book';
 		description = 'Delete the book title';
 		cancel = 'Cancel';
 		confirm = 'Delete';
-	} else if (type == 'author') {
+	} else if (type === 'author') {
 		heading = 'Delete Author';
 		description =
 			'Are you sure you want to delete this author? This will permanently delete all the books written by this author.';
