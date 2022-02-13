@@ -1,6 +1,6 @@
 import React from 'react';
 import HeroSection from './sections/HeroSection';
-import DetailSection from './sections/DetailSection';
+import LibraryDetails from './sections/LibraryDetails';
 import WelcomeTitle from './sections/WelcomeTitle';
 
 const App: React.FC = () => {
@@ -8,8 +8,8 @@ const App: React.FC = () => {
 		<div className='App pb-5'>
 			<WelcomeTitle />
 			<HeroSection />
-			<DetailSection />
-			{/* <img src="/img/empty.jpg" alt="img" className="pixel-perfect" /> */}
+			<LibraryDetails />
+			<img src='/img/library.jpg' alt='img' className='pixel-perfect' />
 		</div>
 	);
 };

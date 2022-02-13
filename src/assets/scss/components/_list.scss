@@ -1,19 +1,18 @@
 .list {
-
-    margin: 0 0 0 0.7rem;
+    margin: 0;
 
     .list-empty {
-        font-size: 1.5rem;
+        font-size: 1rem;
         margin: 1.5rem auto -3rem 0;
         color: $text-secondary;
     }
 
     h1 {
-        font-size: 3rem;
+        font-size: 1.75rem;
     }
 
-    .title-hr {
-        border-bottom: 2px solid $text-color !important;
+    hr {
+        border-bottom: 1px solid $text-color !important;
         opacity: 1 !important;
     }
 
@@ -21,26 +20,81 @@
         margin: 2.5rem 0 2rem 0;
     }
 
+    // .list-group {
+    //     margin: 1.5rem 0 1rem 0;
+    // }
+
     .visibility-hidden {
         display: none;
     }
 }
 
-@include media-md {
+@include media-breakpoint-up(md) {
     .list {
-        margin: 0;
+
+        margin: 0 0 0 0.7rem;
+
+        .list-empty {
+            font-size: 1.1rem;
+        }
 
         h1 {
             font-size: 2rem;
         }
 
-        hr {
-            border-bottom: 1px solid $text-color !important;
-            opacity: 1 !important;
+        .title-hr {
+            border-bottom: 2px solid $text-color !important;
         }
 
         .list-group {
-            margin: 1.5rem 0 1rem 0;
+            margin: 2.5rem 0 2rem 0;
+        }
+
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    .list {
+
+        margin: 0 0 0 0.7rem;
+
+        .list-empty {
+            font-size: 1.3rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+        }
+
+        .title-hr {
+            border-bottom: 2px solid $text-color !important;
+        }
+
+        .visibility-hidden {
+            display: none;
+        }
+    }
+}
+
+@include media-breakpoint-up(xl) {
+    .list {
+
+        margin: 0 0 0 0.7rem;
+
+        .list-empty {
+            font-size: 1.5rem;
+        }
+
+        h1 {
+            font-size: 3rem;
+        }
+
+        .title-hr {
+            border-bottom: 2px solid $text-color !important;
+        }
+
+        .visibility-hidden {
+            display: none;
         }
     }
 }
