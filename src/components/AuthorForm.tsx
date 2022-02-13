@@ -3,6 +3,7 @@ import Create from '../elements/CreateButton';
 import { XCircle } from 'react-feather';
 import { validName } from '../types/Regex';
 import React from 'react';
+import { Col, Row } from 'react-bootstrap';
 
 const AuthorForm: React.FC<{
 	className: string;
@@ -38,8 +39,8 @@ const AuthorForm: React.FC<{
 		setAuthor(authorName);
 	};
 	return (
-		<div className={'library-form ' + className}>
-			<div className='library-form__form d-flex flex-column'>
+		<Row className={'library-form ' + className}>
+			<Col xs={12} xxl={8} className='library-form__form'>
 				<div className='d-flex align-items-center justify-content-between mb-4'>
 					<div className='library-form__title'>
 						<h1>Create Author</h1>
@@ -62,8 +63,9 @@ const AuthorForm: React.FC<{
 					onclick={() => createAuthor(author)}
 					validation={valid}
 				/>
-			</div>
-		</div>
+			</Col>
+		</Row>
 	);
 };
+
 export default AuthorForm;

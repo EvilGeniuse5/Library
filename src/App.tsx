@@ -5,12 +5,12 @@ import WelcomeTitle from './sections/WelcomeTitle';
 
 const App: React.FC = () => {
 	return (
-		<div className='App pb-5'>
+		<React.Fragment>
 			<WelcomeTitle />
 			<HeroSection />
 			<LibraryDetails />
 			{/* <img src='/img/library.jpg' alt='img' className='pixel-perfect' /> */}
-		</div>
+		</React.Fragment>
 	);
 };
 
