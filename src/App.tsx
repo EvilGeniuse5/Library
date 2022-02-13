@@ -9,7 +9,7 @@ const App: React.FC = () => {
 			<WelcomeTitle />
 			<HeroSection />
 			<LibraryDetails />
-			<img src='/img/library.jpg' alt='img' className='pixel-perfect' />
+			{/* <img src='/img/library.jpg' alt='img' className='pixel-perfect' /> */}
 		</div>
 	);
 };
