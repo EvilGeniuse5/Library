@@ -9,7 +9,6 @@ const HeroSection: React.FC = () => {
 			</Row>
 			<Row className='hero__credits pe-md-2 pe-lg-4 pe-xl-5'>
 				<Col className='pt-1 pe-2 pe-md-3 pe-lg-4 pe-xl-5'>
-					{' '}
 					<p className='text-end font-weight-medium'>
 						Photo by{' '}
 						<a

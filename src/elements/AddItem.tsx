@@ -1,13 +1,16 @@
-import { Plus } from "react-feather";
+import { Col, Row } from 'react-bootstrap';
+import { Plus } from 'react-feather';
 const AddItem: React.FC<{
-  title: string;
-  onclick: () => void;
+	title: string;
+	onclick: () => void;
 }> = ({ title, onclick }) => {
-  return (
-    <div className="add-item" onClick={onclick}>
-      <Plus className="add-item__plus" />
-      {title}
-    </div>
-  );
+	return (
+		<Row className='add-item' onClick={onclick}>
+			<Col>
+				<Plus className='add-item__plus' />
+				{title}
+			</Col>
+		</Row>
+	);
 };
 export default AddItem;

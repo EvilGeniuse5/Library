@@ -1,6 +1,6 @@
 .hero {
     &__bg {
-        height: 250px;
+        height: 150px;
         background: url("../../img/hero.webp");
         background-size: cover;
         background-position: center;
@@ -27,7 +27,7 @@
 @include media-breakpoint-up(lg) {
     .hero {
         &__bg {
-            height: 450px;
+            height: 400px;
         }
 
         &__credits p {
