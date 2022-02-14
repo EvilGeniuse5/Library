@@ -1,6 +1,16 @@
 .library-form {
     margin: 4.1rem 0 10rem 0;
 
+    .form-control {
+        border-color: $input-border;
+        border-radius: 0;
+    }
+
+    &__input-title {
+        font-weight: 500;
+        font-size: 0.9rem;
+    }
+
     &__title {
 
         h1 {
