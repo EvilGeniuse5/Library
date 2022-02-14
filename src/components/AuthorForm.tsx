@@ -1,43 +1,46 @@
-import InputBox from '../elements/InputBox';
-import Create from '../elements/CreateButton';
 import { XCircle } from 'react-feather';
 import { validName } from '../types/Regex';
-import React from 'react';
-import { Col, Row } from 'react-bootstrap';
+import React, { useState, useEffect } from 'react';
+import { Button, Col, Form, Row } from 'react-bootstrap';
 
 const AuthorForm: React.FC<{
 	className: string;
 	onclick: () => void;
 	createAuthor: (author: string) => void;
 }> = ({ className, onclick, createAuthor }) => {
-	const [author, setAuthor] = React.useState<string>('');
-	const [valid, setValid] = React.useState<boolean>(false);
-	const [heading, setHeading] = React.useState<string>(
-		'Author name is required'
-	);
-	const [description, setDescription] = React.useState<string>(
-		'Please enter the author name to continue.'
-	);
-	const handleAuthor = (authorName: string) => {
-		if (authorName === '') {
-			setValid(false);
-			setHeading('Author name is required');
-			setDescription('Please enter the author name to continue.');
-		} else if (!validName.test(authorName)) {
-			setValid(false);
-			setHeading('Invalid Author name');
-			setDescription('Please enter a valid author name.');
-		} else if (authorName.length > 0 || authorName !== '') {
-			setValid(true);
-			setHeading('Create New Author');
-			setDescription(
-				'Do you want to add ' +
-					authorName +
-					' to author list? You can update or remove this author at any moment.'
-			);
-		}
-		setAuthor(authorName);
+	const initialValues = { authorName: '' };
+	const [authors, setAuthors] = useState(initialValues);
+	const [authorErrors, setAuthorErrors] = useState({});
+	const [isSubmit, setIsSubmit] = useState(false);
+
+	const handleChange = (e: any) => {
+		const { name, value } = e.target;
+		setAuthors({ ...authors, [name]: value });
 	};
+
+	const handleSubmit = (e: any) => {
+		e.preventDefault();
+		setAuthorErrors(validate(authors));
+		setIsSubmit(true);
+	};
+
+	useEffect(() => {
+		console.log(authorErrors);
+		if (Object.keys(authorErrors).length === 0 && isSubmit) {
+			console.log(authors);
+		}
+	}, [authorErrors]);
+
+	const validate = (values: any) => {
+		const errors: any = {};
+		if (!values.authorName) {
+			errors.authorName = 'Author name is required';
+		} else if (values.authorName.match(validName) === true) {
+			errors.authorName = 'Author name is invalid';
+		}
+		return errors;
+	};
+
 	return (
 		<Row className={'library-form ' + className}>
 			<Col xs={12} xxl={8} className='library-form__form'>
@@ -50,19 +53,29 @@ const AuthorForm: React.FC<{
 						<XCircle className='library-form__xcircle' />
 					</span>
 				</div>
+				<Row>
+					<pre>{JSON.stringify(authors, undefined, 2)}</pre>
 
-				<InputBox
-					title='Name of Author'
-					onchange={(authorName: string) => handleAuthor(authorName)}
-				/>
-				<Create
-					heading={heading}
-					description={description}
-					cancel='Cancel'
-					confirm='Confirm'
-					onclick={() => createAuthor(author)}
-					validation={valid}
-				/>
+					<Form onSubmit={handleSubmit}>
+						<Form.Group>
+							<Form.Label>Email address</Form.Label>
+							<Form.Control
+								type='text'
+								name='authorName'
+								value={authors.authorName}
+								onChange={handleChange}
+							/>
+						</Form.Group>
+						<Col className='create-button d-flex justify-content-end'>
+							<Button
+								type='submit'
+								className='create-button__button btn btn-primary'
+							>
+								Create
+							</Button>
+						</Col>
+					</Form>
+				</Row>
 			</Col>
 		</Row>
 	);
