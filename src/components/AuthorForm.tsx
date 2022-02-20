@@ -63,7 +63,7 @@ const AuthorForm: React.FC<{
 					<Form onSubmit={handleSubmit} className='p-0 my-0'>
 						<Form.Group className='ms-lg-5 my-2'>
 							<Form.Label className='mb-1 library-form__input-title'>
-								Author name
+								Name of Author
 							</Form.Label>
 							<Form.Control
 								type='text'
