@@ -1,5 +1,6 @@
 // import bootstrap
-@import "~bootstrap/scss/bootstrap";
+@import "../../../node_modules/bootstrap/scss/bootstrap";
+
 
 // import fonts
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
@@ -14,8 +15,8 @@
 @import "sections/library-details";
 @import "elements/list-item";
 @import "elements/add-item";
-@import "elements/inputbox";
-@import "elements/selectauthor";
-@import "elements/createbutton";
+@import "elements/input-box";
+@import "elements/select-author";
+@import "elements/create-button";
 @import "components/list";
 @import "components/form";
