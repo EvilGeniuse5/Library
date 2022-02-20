@@ -19,11 +19,19 @@
     &__settings .trash {
         color: $trash-icon;
         transform: scale(1.3);
+
+        &:hover {
+            transform: scale(1.5);
+        }
     }
 
     &__settings .edit {
         color: $edit-icon;
         transform: scale(1.3);
+
+        &:hover {
+            transform: scale(1.5);
+        }
     }
 
     &:hover {
