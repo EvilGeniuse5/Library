@@ -65,6 +65,7 @@ const AuthorList: React.FC = () => {
 				<AuthorForm
 					className={className}
 					onclick={handleOnClose}
+					authorList={authors}
 					createAuthor={(author: string) => createAuthor(author)}
 				/>
 			</Col>

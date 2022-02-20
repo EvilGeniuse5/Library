@@ -3,7 +3,7 @@
     align-items: center;
     font-size: 1.2rem;
     font-weight: 600;
-    margin-bottom: 3.5rem;
+    margin-bottom: 1rem;
     cursor: pointer;
 
     &__plus {
@@ -17,6 +17,7 @@
 @include media-breakpoint-up(md) {
     .add-item {
         font-size: 1.3rem;
+        margin-bottom: 3.5rem;
 
         &__plus {
             margin-right: 0.3rem;

@@ -1,68 +1,99 @@
-import InputBox from '../elements/InputBox';
-import Create from '../elements/CreateButton';
 import { XCircle } from 'react-feather';
 import { validName } from '../types/Regex';
-import React from 'react';
-import { Col, Row } from 'react-bootstrap';
+import React, { useState, useEffect } from 'react';
+import { Button, Col, Form, Row } from 'react-bootstrap';
 
 const AuthorForm: React.FC<{
 	className: string;
 	onclick: () => void;
+	authorList: Array<string>;
 	createAuthor: (author: string) => void;
-}> = ({ className, onclick, createAuthor }) => {
-	const [author, setAuthor] = React.useState<string>('');
-	const [valid, setValid] = React.useState<boolean>(false);
-	const [heading, setHeading] = React.useState<string>(
-		'Author name is required'
-	);
-	const [description, setDescription] = React.useState<string>(
-		'Please enter the author name to continue.'
-	);
-	const handleAuthor = (authorName: string) => {
-		if (authorName === '') {
-			setValid(false);
-			setHeading('Author name is required');
-			setDescription('Please enter the author name to continue.');
-		} else if (!validName.test(authorName)) {
-			setValid(false);
-			setHeading('Invalid Author name');
-			setDescription('Please enter a valid author name.');
-		} else if (authorName.length > 0 || authorName !== '') {
-			setValid(true);
-			setHeading('Create New Author');
-			setDescription(
-				'Do you want to add ' +
-					authorName +
-					' to author list? You can update or remove this author at any moment.'
-			);
-		}
-		setAuthor(authorName);
+}> = ({ className, onclick, createAuthor, authorList }) => {
+	const initialValues = { authorName: '' };
+	const [authors, setAuthors] = useState(initialValues);
+	const [authorErrors, setAuthorErrors] = useState({ authorName: '' });
+	const [isSubmit, setIsSubmit] = useState(false);
+
+	const handleChange = (e: any) => {
+		const { name, value } = e.target;
+		setAuthors({ ...authors, [name]: value });
 	};
+
+	const handleSubmit = (e: any) => {
+		e.preventDefault();
+		setAuthorErrors(validate(authors));
+		setIsSubmit(true);
+	};
+
+	useEffect(() => {
+		if (Object.keys(authorErrors).length === 0 && isSubmit) {
+			createAuthor(authors.authorName);
+			setAuthors(initialValues);
+		}
+	}, [authorErrors]);
+
+	const validate = (values: any) => {
+		const errors: any = {};
+		if (!values.authorName) {
+			errors.authorName = 'Author name is required';
+		} else if (!validName.test(values.authorName)) {
+			errors.authorName = 'Author name is invalid';
+		} else if (authorList.includes(values.authorName)) {
+			errors.authorName = 'Author name already exists';
+		}
+		return errors;
+	};
+
 	return (
 		<Row className={'library-form ' + className}>
-			<Col xs={12} xxl={8} className='library-form__form'>
-				<div className='d-flex align-items-center justify-content-between mb-4'>
-					<div className='library-form__title'>
-						<h1>Create Author</h1>
-						<hr />
+			<Col xs={12} xxl={9} className='library-form__form ps-lg-0 pe-lg-5 '>
+				<Row>
+					<div className='d-flex align-items-center justify-content-between my-4 px-0'>
+						<div className='library-form__title'>
+							<h1>Create Author</h1>
+							<hr />
+						</div>
+						<span onClick={onclick}>
+							<XCircle className='library-form__xcircle' />
+						</span>
 					</div>
-					<span onClick={onclick}>
-						<XCircle className='library-form__xcircle' />
-					</span>
-				</div>
+				</Row>
 
-				<InputBox
-					title='Name of Author'
-					onchange={(authorName: string) => handleAuthor(authorName)}
-				/>
-				<Create
-					heading={heading}
-					description={description}
-					cancel='Cancel'
-					confirm='Confirm'
-					onclick={() => createAuthor(author)}
-					validation={valid}
-				/>
+				<Row>
+					<Form onSubmit={handleSubmit} className='p-0 my-0'>
+						<Form.Group className='ms-lg-5 my-2'>
+							<Form.Label className='mb-1 library-form__input-title'>
+								Name of Author
+							</Form.Label>
+							<Form.Control
+								type='text'
+								name='authorName'
+								value={authors.authorName}
+								onChange={handleChange}
+								style={{
+									borderColor: authorErrors.authorName ? '#dc3545' : '',
+								}}
+							/>
+							<Form.Control.Feedback
+								type='invalid'
+								style={{
+									display: authorErrors.authorName ? 'block' : 'none',
+									fontWeight: 500,
+								}}
+							>
+								{authorErrors.authorName}
+							</Form.Control.Feedback>
+						</Form.Group>
+						<Col className='create-button d-flex justify-content-end'>
+							<Button
+								type='submit'
+								className='create-button__button btn btn-primary mt-4'
+							>
+								Create
+							</Button>
+						</Col>
+					</Form>
+				</Row>
 			</Col>
 		</Row>
 	);

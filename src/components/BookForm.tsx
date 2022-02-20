@@ -18,8 +18,8 @@ const BookForm: React.FC<{
 						<XCircle className='library-form__xcircle' />
 					</span>
 				</div>
-				<InputBox title='Title of the Book' onchange={() => {}} />
-				<InputBox title='ISBN' onchange={() => {}} />
+				{/* <InputBox title='Title of the Book' onchange={() => {}} />
+				<InputBox title='ISBN' onchange={() => {}} /> */}
 				<SelectAuthor title='Author' />
 				{/* <Create
           heading="Create New Book"

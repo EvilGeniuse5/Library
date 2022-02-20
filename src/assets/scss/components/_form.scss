@@ -1,6 +1,16 @@
 .library-form {
     margin: 4.1rem 0 10rem 0;
 
+    .form-control {
+        border-color: $input-border;
+        border-radius: 0;
+    }
+
+    &__input-title {
+        font-weight: 500;
+        font-size: 0.9rem;
+    }
+
     &__title {
 
         h1 {
@@ -31,6 +41,21 @@
             @include transition-ease;
         }
     }
+
+    .create-button {
+        &Button {
+            outline: none;
+            border: 0 !important;
+            border-radius: 0.65rem !important;
+            background: $button-color !important;
+            padding: 0.3rem 2.3rem !important;
+            font-size: 1.4rem;
+            margin: 0.75rem 0;
+            align-self: flex-end;
+        }
+    }
+
+
 }
 
 @include media-md {
@@ -56,5 +81,15 @@
         &__xcircle {
             transform: scale(1);
         }
+
+        .create-button {
+            & button {
+                padding: 0.3rem 1.5rem !important;
+                border-radius: 0 !important;
+                width: 100%;
+                font-size: 1.2rem;
+            }
+        }
+
     }
 }
