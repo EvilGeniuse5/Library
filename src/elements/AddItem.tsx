@@ -1,5 +1,7 @@
+import React from 'react';
 import { Col, Row } from 'react-bootstrap';
 import { Plus } from 'react-feather';
+
 const AddItem: React.FC<{
 	title: string;
 	onclick: () => void;

@@ -1,6 +1,6 @@
+import React, { useState, useEffect } from 'react';
 import { XCircle } from 'react-feather';
 import { validName } from '../types/Regex';
-import React, { useState, useEffect } from 'react';
 import { Button, Col, Form, Row } from 'react-bootstrap';
 
 const AuthorForm: React.FC<{

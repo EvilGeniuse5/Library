@@ -1,6 +1,6 @@
+import React from 'react';
 import { Edit, Trash2 } from 'react-feather';
 import { Button, Modal } from 'react-bootstrap';
-import React from 'react';
 
 const ListItem: React.FC<{
 	id: number;

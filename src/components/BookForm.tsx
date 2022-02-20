@@ -1,4 +1,4 @@
-import InputBox from '../elements/InputBox';
+import React from 'react';
 import SelectAuthor from '../elements/SelectAuthor';
 import { XCircle } from 'react-feather';
 

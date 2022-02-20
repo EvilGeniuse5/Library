@@ -4,17 +4,17 @@ import AuthorForm from './AuthorForm';
 import ListItem from '../elements/ListItem';
 import { Col, Row } from 'react-bootstrap';
 
-const AuthorList: React.FC = () => {
+const AuthorList: React.FC<{}> = ({}) => {
 	const [visibility, setVisibility] = React.useState<boolean>(false);
 	const [authors, setAuthors] = React.useState<Array<string>>([]);
 
-	const removeAuthor = (index: number) => {
+	const handleRemoveAuthor = (index: number) => {
 		const newAuthors = [...authors];
 		newAuthors.splice(index, 1);
 		setAuthors(newAuthors);
 	};
 
-	const createAuthor = (author: string) => {
+	const handleCreateAuthor = (author: string) => {
 		if (author === '') {
 			alert('Please enter an author name');
 			return;
@@ -53,20 +53,21 @@ const AuthorList: React.FC = () => {
 							<ListItem
 								id={index}
 								title={author}
-								onclick={() => removeAuthor(index)}
+								onclick={() => handleRemoveAuthor(index)}
 								type='author'
 							/>
 						</li>
 					))}
 				</ul>
 			</Col>
+
 			<Col xs={12}>
 				<AddItem title='Add Author' onclick={handleFormVisibility} />
 				<AuthorForm
 					className={className}
 					onclick={handleOnClose}
 					authorList={authors}
-					createAuthor={(author: string) => createAuthor(author)}
+					createAuthor={(author: string) => handleCreateAuthor(author)}
 				/>
 			</Col>
 		</Row>
