@@ -1,4 +1,6 @@
+import React from 'react';
 import { Form } from 'react-bootstrap';
+
 const InputBox: React.FC<{
 	title: string;
 	onchange: (author: string) => void;
