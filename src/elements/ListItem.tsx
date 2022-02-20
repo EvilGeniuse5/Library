@@ -6,11 +6,12 @@ const ListItem: React.FC<{
 	id: number;
 	title: string;
 	type: string;
-	onclick: () => void;
-}> = ({ id, title, type, onclick }) => {
+	deleteOnClick: (id: number) => void;
+	updateOnClick: (id: number, author: string) => void;
+}> = ({ id, title, type, deleteOnClick, updateOnClick }) => {
 	const [show, setShow] = React.useState<boolean>(false);
-	const handleDelete = () => {
-		onclick();
+	const handleDelete = (id: number) => {
+		deleteOnClick(id);
 		setShow(false);
 	};
 
@@ -40,8 +41,11 @@ const ListItem: React.FC<{
 			{id + 1}.&nbsp;
 			{title}
 			<div className='list-item__settings'>
-				<Edit className='list-item__icon edit' />
-				<Trash2 onClick={handleShow} className='list-item__icon trash' />
+				<Edit
+					onClick={() => updateOnClick(id, title)}
+					className='list-item__icon  edit'
+				/>
+				<Trash2 onClick={handleShow} className='list-item__icon  trash' />
 			</div>
 			<Modal show={show} onHide={handleClose}>
 				<Modal.Header closeButton>
@@ -52,7 +56,7 @@ const ListItem: React.FC<{
 					<Button variant='success' onClick={handleClose}>
 						{cancel}
 					</Button>
-					<Button variant='danger' onClick={handleDelete}>
+					<Button variant='danger' onClick={() => handleDelete(id)}>
 						{confirm}
 					</Button>
 				</Modal.Footer>

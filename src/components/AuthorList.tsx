@@ -3,27 +3,18 @@ import AddItem from '../elements/AddItem';
 import AuthorForm from './AuthorForm';
 import ListItem from '../elements/ListItem';
 import { Col, Row } from 'react-bootstrap';
+import { IAuthor } from '../types/Library';
 
-const AuthorList: React.FC<{}> = ({}) => {
+const AuthorList: React.FC<{
+	authorList: IAuthor[];
+	removeAuthor: (index: number) => void;
+	addAuthor: (author: string) => void;
+}> = ({ authorList, removeAuthor, addAuthor }) => {
 	const [visibility, setVisibility] = React.useState<boolean>(false);
-	const [authors, setAuthors] = React.useState<Array<string>>([]);
-
-	const handleRemoveAuthor = (index: number) => {
-		const newAuthors = [...authors];
-		newAuthors.splice(index, 1);
-		setAuthors(newAuthors);
-	};
-
-	const handleCreateAuthor = (author: string) => {
-		if (author === '') {
-			alert('Please enter an author name');
-			return;
-		}
-		const newAuthors = [...authors, author];
-		setAuthors(newAuthors);
-	};
+	const [status, setStatus] = React.useState<string>('Create');
 
 	const handleFormVisibility = () => {
+		setStatus('Create');
 		setVisibility(true);
 	};
 
@@ -41,19 +32,20 @@ const AuthorList: React.FC<{}> = ({}) => {
 				<h1>Authors</h1>
 				<hr className='title-hr' />
 
-				{authors.length === 0 ? (
+				{authorList.length === 0 ? (
 					<p className='list-empty'>
 						<i>No authors listed here.</i>
 					</p>
 				) : null}
 				<ul className='list-group'>
-					{authors.map((author: string, index: number) => (
+					{authorList.map((author: IAuthor, index: number) => (
 						<li key={index}>
 							{' '}
 							<ListItem
 								id={index}
-								title={author}
-								onclick={() => handleRemoveAuthor(index)}
+								title={author.name}
+								updateOnClick={() => undefined}
+								deleteOnClick={() => removeAuthor(author.id)}
 								type='author'
 							/>
 						</li>
@@ -64,10 +56,11 @@ const AuthorList: React.FC<{}> = ({}) => {
 			<Col xs={12}>
 				<AddItem title='Add Author' onclick={handleFormVisibility} />
 				<AuthorForm
+					title={status}
 					className={className}
 					onclick={handleOnClose}
-					authorList={authors}
-					createAuthor={(author: string) => handleCreateAuthor(author)}
+					authorList={authorList.map((author: IAuthor) => author.name)}
+					createAuthor={(author: string) => addAuthor(author)}
 				/>
 			</Col>
 		</Row>

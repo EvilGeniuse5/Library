@@ -1,9 +1,14 @@
 import React from 'react';
 import AddItem from '../elements/AddItem';
 import ListItem from '../elements/ListItem';
+import { IAuthor, IBook } from '../types/Library';
 import BookForm from './BookForm';
 
-const BookList: React.FC = () => {
+const BookList: React.FC<{
+	authorList: IAuthor[];
+	removeBook: (index: number) => void;
+	addBook: (author: IBook) => void;
+}> = () => {
 	const [visibility, setVisibility] = React.useState<boolean>(false);
 
 	const handleFormVisibility = () => {
@@ -22,40 +27,7 @@ const BookList: React.FC = () => {
 		<div className='list'>
 			<h1>Books</h1>
 			<hr className='title-hr' />
-			<ul className='list-group'>
-				<li>
-					<ListItem
-						id={1}
-						onclick={() => {}}
-						title='Book 1 title'
-						type='book'
-					/>
-				</li>
-				<li>
-					<ListItem
-						id={2}
-						onclick={() => {}}
-						title='Book 2 title'
-						type='book'
-					/>
-				</li>
-				<li>
-					<ListItem
-						id={3}
-						onclick={() => {}}
-						title='Book 3 title'
-						type='book'
-					/>
-				</li>
-				<li>
-					<ListItem
-						id={4}
-						onclick={() => {}}
-						title='Book 4 title'
-						type='book'
-					/>
-				</li>
-			</ul>
+			<ul className='list-group'></ul>
 			<AddItem title='Add Book' onclick={handleFormVisibility} />
 			<BookForm className={className} onclick={handleOnClose} />
 		</div>

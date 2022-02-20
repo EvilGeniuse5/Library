@@ -5,10 +5,11 @@ import { Button, Col, Form, Row } from 'react-bootstrap';
 
 const AuthorForm: React.FC<{
 	className: string;
+	title: string;
 	onclick: () => void;
 	authorList: Array<string>;
 	createAuthor: (author: string) => void;
-}> = ({ className, onclick, createAuthor, authorList }) => {
+}> = ({ className, onclick, createAuthor, authorList, title }) => {
 	const initialValues = { authorName: '' };
 	const [authors, setAuthors] = useState(initialValues);
 	const [authorErrors, setAuthorErrors] = useState({ authorName: '' });
@@ -50,7 +51,7 @@ const AuthorForm: React.FC<{
 				<Row>
 					<div className='d-flex align-items-center justify-content-between my-4 px-0'>
 						<div className='library-form__title'>
-							<h1>Create Author</h1>
+							<h1>{title} Author</h1>
 							<hr />
 						</div>
 						<span onClick={onclick}>
